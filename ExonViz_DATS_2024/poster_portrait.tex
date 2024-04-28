@@ -1,0 +1,225 @@
+%\documentclass[portrait,final,a0paper,fontscale=0.292]{baposter}
+\documentclass[portrait,a0paper,fontscale=0.31]{baposter}
+
+\usepackage{calc}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{relsize}
+\usepackage{multirow}
+\usepackage{rotating}
+\usepackage{bm}
+\usepackage{url}
+
+% Redmar
+\usepackage{enumitem}       %set indent for enumerate/itemize
+\setitemize{leftmargin=0.3cm,itemsep=1.3em,parsep=0pt}%,topsep=0pt}
+\usepackage[none]{hyphenat} %disables all hyphenation
+%https://tex.stackexchange.com/questions/79591/superscripts-in-bibliography-with-bibtex
+\usepackage[super]{natbib} 
+\usepackage[font=small,labelfont=bf]{caption}
+\DeclareCaptionFont{tiny}{\tiny}
+%\usepackage{svg}
+\usepackage{verbatim}
+
+\usepackage{graphicx}
+\usepackage{multicol}
+
+%\usepackage{times}
+%\usepackage{helvet}
+%\usepackage{bookman}
+\usepackage{palatino}
+
+% Disable due to conflict with usepackage caption
+%\newcommand{\captionfont}{\footnotesize}
+
+\graphicspath{{images/}{../images/}}
+\usetikzlibrary{calc}
+
+%% Some names etc
+\newcommand{\senterica}{\textit{Salmonella enterica} serovar Heidelberg }
+\newcommand{\heidelberg}{\textit{S.} Heidelberg }
+\newcommand{\fcite}[2]{#1$^#2$}
+\newcommand{\mdr}{multidrug-resistant }
+\newcommand{\Mdr}{Multidrug-resistant }
+\newcommand{\reference}{reference strain SL476 }
+\newcommand{\amr}[2]{\textbf{#1} #2,}
+\newcommand{\famr}[2]{\textbf{#1} #2.}
+\newcommand{\cmy}{\textit{bla}{\tiny CMY-2}}
+\newcommand{\padd}{\vspace*{0.2cm}}
+\newcommand{\ppadd}{\vspace*{0.29cm}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Begin of Document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Here starts the poster
+%%%---------------------------------------------------------------------------
+%%% Format it to your taste with the options
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Define some colors
+
+%\definecolor{lightblue}{cmyk}{0.83,0.24,0,0.12}
+\definecolor{lightblue}{rgb}{0.145,0.6666,1}
+\definecolor{darkblue}{rgb}{.082352,.2588235,.450980}
+
+%\hyphenation{resolution occlusions}
+%%
+\begin{poster}%
+  % Poster Options
+  {
+  % Show grid to help with alignment
+  grid=false,
+  % Column spacing
+  colspacing=2em,
+  % Color style
+  bgColorOne=white,
+  bgColorTwo=white,
+  %borderColor=lightblue,
+  borderColor=white,
+  headerColorOne=darkblue,
+  headerColorTwo=darkblue,
+  headerFontColor=white,
+  boxColorOne=white,
+  boxColorTwo=darkblue,
+  % Format of textbox
+  textborder=faded,
+  % Format of text header
+  eyecatcher=true,
+  headerborder=closed,
+  headerheight=0.1\textheight,
+%  textfont=\sc, An example of changing the text font
+  headershape=rounded,
+  headershade=shadelr,
+  headerborder=open,
+  headerfont=\Large\sf\bf, %Sans Serif
+  headerheight=0.13\textheight,
+  textfont={\setlength{\parindent}{1.5em}},
+  boxshade=plain,
+%  background=shade-tb,
+  background=plain,
+  linewidth=2pt,
+  }
+  % Eye Catcher
+  %{\includegraphics[height=5em]{images/nvwa.png}} 
+  {}
+  % Title
+  {
+    {
+      ExonViz: An application to visualize transcripts and variants
+    }
+    %\vspace{0.3em}
+  }
+  % Authors
+  {
+    %\vspace{0.15em}
+    {
+      \fcite{Redmar R. van den Berg}{{1,2,3}}, \fcite{Marlen C. Lauffer}{{1,2}}, \fcite{Jeroen F.J. Laros}{{2,4}}
+      \\{\smaller $^1$ \textit{Dutch Center for RNA Therapeutics}}
+      \\{\smaller $^2$ \textit{Department of Human Genetics, Leiden University Medical Center, Leiden, The Netherlands}}
+      \\{\smaller $^3$ \textit{Department of Hematology, Leiden University Medical Center, Leiden, The Netherlands}}
+      \\{\smaller $^4$ \textit{Department of Bioinformatics and Computational Services, National Institute of Public Health and the Environment (RIVM), The Netherlands}}
+    }
+    %\vspace{0.15em}
+  }
+  %{Netherlands Food and Consumer Product Safety Authority}
+  % University logo
+  %{\includegraphics[height=10.5em]{images/rijksoverheid3.png}} 
+  %{\includegraphics[height=9.5em]{images/rijksoverheid3.png}} 
+  % {\parbox[top][12em][t]{5em}{\includegraphics[height=9.5em]{images/rijksoverheid4.png}}} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Now define the boxes that make up the poster
+%%%---------------------------------------------------------------------------
+%%% Each box has a name and can be placed absolutely or relatively.
+%%% The only inconvenience is that you can only specify a relative position 
+%%% towards an already declared box. So if you have a box attached to the 
+%%% bottom, one to the top and a third one which should be in between, you 
+%%% have to specify the top and bottom boxes before you specify the middle 
+%%% box.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % % A coloured circle useful as a bullet with an adjustably strong filling
+    %\newcommand{\colouredcircle}{%
+    %  \tikz{\useasboundingbox (-0.2em,-0.32em) rectangle(0.2em,0.32em); \draw[draw=black,fill=lightblue,line width=0.03em] (0,0) circle(0.18em);}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \headerbox{Introduction}{name=introduction,column=0,row=0}{
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \ppadd
+    \noindent Don't draw exons by hand, use our tool
+ }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \headerbox{Features}{name=features,below=introduction} {
+    \padd
+    \begin{itemize}
+      \item Draw transcripts including features like exon frames, coding region and variants
+      \item All exon sizes and variant positions are biologically accurate
+      \item Draw transcripts for any species
+      \item If a gene name is specified that exists in human, the MANE Select transcript will be used by default.
+      \item Extensive documentation with examples
+      \item Specify custom / novel / patient transcripts using a simple Excel file.
+    \end{itemize}
+  }
+  \headerbox{Materials and Methods}{name=MM,below=features} {
+    \padd
+    \begin{itemize}
+      \item ExonViz is written in Flask
+      \item It uses the Mutalyzer (CITE) API to fetch transcript information
+      \item It has the ability to split large exons so they fit on the specified page
+    \end{itemize}
+  }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \headerbox{Examples}{name=examples,column=1,span=2} {
+  % \noindent{\centering\includegraphics[width=0.75\linewidth]{images/Tree8_1.png}\\}
+  \captionsetup{labelformat=empty,margin=0.6cm}
+  \noindent{\centering\includegraphics[width=0.75\linewidth]{images/SDHD.png}\\}
+  \captionof{figure}{Transcript NM\_003002.4 for SDHD, with two variants}
+  }
+
+    %\caption{SMX: Sulfamethoxazole; CIP: Ciprofloxacin; NAL: Nalidixic Acid; TET: Tetracycline; AMP: Ampicillin; CHL: Chloramphenicol; FOT: Cefotaxime; TAZ: Ceftazidime; GEN: Gentamicin; COL: Colistin}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \headerbox{References}{name=ref,column=2,above=bottom} {
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \tiny
+    \begin{enumerate}[itemsep=-0.3ex,leftmargin=0.29cm]
+      \item Lefter, M., et al. "Mutalyzer 2: next generation HGVS nomenclature checker, Bioinformatics (2021). https://doi.org/10.1093/bioinformatics/btab051
+    \end{enumerate}
+  }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\headerbox{Contact}{name=contact,column=1, aligned=ref}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  {
+  \begin{center}
+  \vspace{1.25em}
+
+  \textbf{RedmarvandenBerg@lumc.nl}\linebreak
+  \textbf{DCRT@lumc.nl}\linebreak
+%\linebreak\linebreak\linebreak\linebreak
+  \end{center}
+  }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\headerbox{QR Code}{name=qr,column=0,aligned=ref}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  {
+  %hfill to align right: https://tex.stackexchange.com/questions/55472/how-to-make-text-aligned-left-center-right-in-the-same-line
+  \vspace{-0.3em}
+  \begin{center}
+  %\includegraphics[width=0.25\linewidth]{images/meegid_poster2016.png}
+  % \includegraphics[width=0.25\linewidth]{images/meegid_heidelberg_poultry.png}
+  \end{center}
+  }
+\end{poster}
+
+\end{document}
+
