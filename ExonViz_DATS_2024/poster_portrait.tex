@@ -168,12 +168,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \headerbox{Usage}{name=usage,below=introduction} {
     \padd
-    \begin{enumerate}
+    \noindent
+    \begin{enumerate}[leftmargin=*]
       \item Specify a gene, transcript or HGVS description
-      \item Set the drawing options such as \option{scale}, \option{height} and the maximum \option{width} for the figure
+      \item Set the drawing options such as \option{scale}, \option{height} and the figure \option{width}
       \item Set the exon and variant colors, and the variant shape (\option{pin} or \option{bar})
-      \item Click \textbf{Submit} to draw the figure on screen, or use the \textbf{Download}
-            button to download the figure in SVG format
+      \item Click \textbf{Submit} to draw the figure, or \textbf{Download} the figure in SVG format
     \end{enumerate}
   }
 
@@ -229,8 +229,6 @@
   \noindent{\centering\includegraphics[width=0.95\linewidth]{images/CYLD.png}\\}
   \captionof{figure}{Transcript NM\_001378743.1 of CYLD, with all ClinVar variants by category}
   }
-
-    %\caption{SMX: Sulfamethoxazole; CIP: Ciprofloxacin; NAL: Nalidixic Acid; TET: Tetracycline; AMP: Ampicillin; CHL: Chloramphenicol; FOT: Cefotaxime; TAZ: Ceftazidime; GEN: Gentamicin; COL: Colistin}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \headerbox{References}{name=ref,column=2,above=bottom} {
