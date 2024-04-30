@@ -154,10 +154,10 @@
     \padd
     \noindent\textbf{ExonViz} is a tool to visualize transcripts, including features
     like coding and non-coding regions, variants and exon reading-frames.
-    All sizes and variant positions are biologically accurate for the specified
-    transcript, which can be from any species.
 
-    \noindent Visit \url{https://exonviz.rnatherapy.nl}
+    \noindent It is available online via \url{https://exonviz.rnatherapy.nl},
+    and can also be installed as a command line tool for advanced features.
+
   }
 
 
@@ -176,22 +176,20 @@
   \headerbox{Features}{name=features,below=usage} {
     \padd
     \begin{itemize}
-      \item Draw transcripts including features like exon frames, coding region and variants
+      \item Draw transcripts including features like exon frames, coding region and variants for transcripts from any species
       \item All exon sizes and variant positions are biologically accurate
-      \item Draw transcripts for any species
-      \item If a gene name is specified that exists in human, the MANE Select transcript will be used by default.
-      \item Extensive documentation with examples
-      \item Specify custom / novel / patient transcripts using a simple Excel file.
+      \item Specify custom transcripts and variants via a simple Excel file
+      \item Extensive online documentation with examples
+      \item Figures generated with \textbf{ExonViz} are free to use for any purpose
     \end{itemize}
   }
 
   \headerbox{Materials and Methods}{name=MM,below=features} {
     \padd
-    \begin{itemize}
-      \item ExonViz is written in Flask
-      \item It uses the Mutalyzer (CITE) API to fetch transcript information
-      \item It has the ability to split large exons so they fit on the specified page
-    \end{itemize}
+    \noindent
+    ExonViz is written in Python, and uses the Mutalyzer$^1$ API to fetch
+    transcript annotations. The web interface is written in Flask.
+    It has the ability to split large exons so they fit on the specified page
   }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
