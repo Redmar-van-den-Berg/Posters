@@ -148,7 +148,7 @@
 \typeout{Use Packages}
 \RequirePackage{xkeyval}
 \RequirePackage{calc}
-\RequirePackage[cmyk]{xcolor}
+\RequirePackage[rgb]{xcolor}
 \RequirePackage{tikz}
 \RequirePackage{pgf}
 \RequirePackage{ifthen}
