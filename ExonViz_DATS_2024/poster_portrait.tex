@@ -37,6 +37,7 @@
 \usetikzlibrary{calc}
 
 %% Some names etc
+\newcommand{\option}[1]{\texttt{#1}}
 \newcommand{\senterica}{\textit{Salmonella enterica} serovar Heidelberg }
 \newcommand{\heidelberg}{\textit{S.} Heidelberg }
 \newcommand{\fcite}[2]{#1$^#2$}
@@ -150,13 +151,29 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \headerbox{Introduction}{name=introduction,column=0,row=0}{
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \ppadd
-    \noindent Don't draw exons by hand, use our tool
- }
+    \padd
+    \noindent\textbf{ExonViz} is a tool to visualize transcripts, including features
+    like coding and non-coding regions, variants and exon reading-frames.
+    All sizes and variant positions are biologically accurate for the specified
+    transcript, which can be from any species.
+
+    \noindent Visit \url{https://exonviz.rnatherapy.nl}
+  }
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \headerbox{Features}{name=features,below=introduction} {
+  \headerbox{Usage}{name=usage,below=introduction} {
+    \padd
+    \begin{enumerate}
+      \item Specify a gene, transcript or HGVS description
+      \item Set the drawing options such as \option{scale}, \option{height} and the maximum \option{width} for the figure
+      \item Set the exon and variant colors, and the variant shape (\option{pin} or \option{bar})
+      \item Click \textbf{Submit} to draw the figure on screen, or use the \textbf{Download}
+            button to download the figure in SVG format
+    \end{enumerate}
+  }
+
+  \headerbox{Features}{name=features,below=usage} {
     \padd
     \begin{itemize}
       \item Draw transcripts including features like exon frames, coding region and variants
@@ -167,6 +184,7 @@
       \item Specify custom / novel / patient transcripts using a simple Excel file.
     \end{itemize}
   }
+
   \headerbox{Materials and Methods}{name=MM,below=features} {
     \padd
     \begin{itemize}
@@ -193,14 +211,14 @@
   }
 
   % DMD figure
-  \headerbox{DMD (schematic)}{name=DMD,column=1,span=2,aligned=MM} {
+  \headerbox{DMD (schematic)}{name=DMD,column=1,span=2,below=SDHDnon} {
   \captionsetup{labelformat=empty,margin=0.6cm}
   \noindent{\centering\includegraphics[width=0.95\linewidth]{images/DMD-schematic.png}\\}
   \captionof{figure}{Schematic representation of the coding region of \textit{Dystrophin}.}
   }
 
   % CYLD figure
-  \headerbox{CYLD variants from ClinVar}{name=CYLD,column=0,span=3,below=MM,below=DMD} {
+  \headerbox{CYLD variants from ClinVar}{name=CYLD,column=0,span=3,below=MM} {
   \captionsetup{labelformat=empty,margin=0.6cm}
   \noindent{\centering\includegraphics[width=0.95\linewidth]{images/CYLD.png}\\}
   \captionof{figure}{Transcript NM\_001378743.1 of CYLD, with all ClinVar variants by category}
