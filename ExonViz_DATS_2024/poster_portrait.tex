@@ -176,15 +176,29 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \headerbox{SDHD}{name=SDHD,column=1,span=2} {
-  % SHDD figure
+  % SHD figure
+  \headerbox{SDHD (NM\_003002.4)}{name=SDHD,column=1,span=2} {
   \captionsetup{labelformat=empty,margin=0.6cm}
   \noindent{\centering\includegraphics[width=0.95\linewidth]{images/SDHD.png}\\}
   \captionof{figure}{Transcript NM\_003002.4 for SDHD, with two variants}
   }
 
+  % SHD noncoding
+  \headerbox{SDHD (NM\_003002.4) non coding}{name=SDHDnon,column=1,span=2,below=SDHD} {
+  \captionsetup{labelformat=empty,margin=0.6cm}
+  \noindent{\centering\includegraphics[width=0.95\linewidth]{images/SDHD-non.png}\\}
+  \captionof{figure}{Transcript NM\_003002.4 for SDHD, with two variants}
+  }
+
+  % DMD figure
+  \headerbox{DMD (schematic)}{name=DMD,column=1,span=2,aligned=MM} {
+  \captionsetup{labelformat=empty,margin=0.6cm}
+  \noindent{\centering\includegraphics[width=0.95\linewidth]{images/DMD-schematic.png}\\}
+  \captionof{figure}{Schematic representation of the coding region of \textit{Dystrophin}.}
+  }
+
   % CYLD figure
-  \headerbox{CYLD variants from ClinVar}{name=CYLD,column=0,span=3,below=MM} {
+  \headerbox{CYLD variants from ClinVar}{name=CYLD,column=0,span=3,below=MM,below=DMD} {
   \captionsetup{labelformat=empty,margin=0.6cm}
   \noindent{\centering\includegraphics[width=0.95\linewidth]{images/CYLD.png}\\}
   \captionof{figure}{Transcript NM\_001378743.1 of CYLD, with all ClinVar variants by category}
@@ -206,8 +220,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   {
   \begin{center}
-  \vspace{1.25em}
-
   \textbf{RedmarvandenBerg@lumc.nl}\linebreak
   \textbf{DCRT@lumc.nl}\linebreak
 %\linebreak\linebreak\linebreak\linebreak
