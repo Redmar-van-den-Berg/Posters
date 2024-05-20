@@ -160,7 +160,7 @@
 
     % \noindent The tool can be accessed through \mbox{\url{https://exonviz.rnatherapy.nl}}
     % and can also be installed as a command line tool for advanced features.
-    \noindent Visit \mbox{\url{https://exonviz.rnatherapy.nl}} to access the
+    \noindent Visit the website$^1$  to access the
     tool online, or install the command line tool for advanced features.
   }
 
@@ -185,19 +185,13 @@
     positions are biologically accurate, according to the specified transcript.
     The user can specify custom transcripts and variants via a simple Excel
     file, as described in the extensive online documentation.
+    ExonViz is written in Python, and uses the Mutalyzer$^2$ API to fetch
+    transcript annotations. The web interface is written in Flask.
     \newline
     \newline
     \noindent
     Figures generated with \exonviz can be freely used in publications and
     presentations.
-  }
-
-  \headerbox{Materials and Methods}{name=MM,below=features} {
-    \padd
-    \noindent
-    ExonViz is written in Python, and uses the Mutalyzer$^1$ API to fetch
-    transcript annotations. The web interface is written in Flask.
-    It has the ability to split large exons so they fit on the specified page
   }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -224,44 +218,47 @@
   }
 
   % CYLD figure
-  \headerbox{CYLD, with variants from ClinVar}{name=CYLD,column=0,span=3,below=MM} {
+  \headerbox{CYLD, with variants from ClinVar}{name=CYLD,column=0,span=3,below=features} {
   \captionsetup{labelformat=empty,margin=0.6cm}
   \noindent{\centering\includegraphics[width=0.95\linewidth]{images/CYLD.png}\\}
   \captionof{figure}{Transcript NM\_001378743.1 of CYLD, with all ClinVar variants by category}
   }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \headerbox{References}{name=ref,column=2,above=bottom} {
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \tiny
-    \begin{enumerate}[itemsep=-0.3ex,leftmargin=0.29cm]
-      \item Lefter, M., et al. "Mutalyzer 2: next generation HGVS nomenclature checker, Bioinformatics (2021). https://doi.org/10.1093/bioinformatics/btab051
-    \end{enumerate}
-  }
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\headerbox{Contact}{name=contact,column=1, aligned=ref}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  {
-  \begin{center}
-  \textbf{RedmarvandenBerg@lumc.nl}\linebreak
-  \textbf{DCRT@lumc.nl}\linebreak
-%\linebreak\linebreak\linebreak\linebreak
-  \end{center}
-  }
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\headerbox{QR Code}{name=qr,column=0,aligned=ref}
+\headerbox{Visit ExonViz}{name=qr,column=0,above=bottom}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   {
   %hfill to align right: https://tex.stackexchange.com/questions/55472/how-to-make-text-aligned-left-center-right-in-the-same-line
   \vspace{-0.3em}
   \begin{center}
-  %\includegraphics[width=0.25\linewidth]{images/meegid_poster2016.png}
-  % \includegraphics[width=0.25\linewidth]{images/meegid_heidelberg_poultry.png}
+  \includegraphics[width=0.25\linewidth]{images/exonviz-qr.png}
   \end{center}
   }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\headerbox{Contact}{name=contact,column=1, aligned=qr}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  {
+  \begin{center}
+  \textbf{RedmarvandenBerg@lumc.nl}\linebreak
+  \newline
+  \textbf{DCRT@lumc.nl}\linebreak
+%\linebreak\linebreak\linebreak\linebreak
+  \end{center}
+  }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \headerbox{References}{name=ref,column=2,aligned=qr} {
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \tiny
+    \begin{enumerate}[itemsep=-0.3ex,leftmargin=0.29cm]
+      \item https://exonviz.rnatherapy.nl
+      \item Lefter, M., et al. "Mutalyzer 2: next generation HGVS nomenclature checker, Bioinformatics (2021). https://doi.org/10.1093/bioinformatics/btab051
+    \end{enumerate}
+  }
+
+
+
 \end{poster}
 
 \end{document}
